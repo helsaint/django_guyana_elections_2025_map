@@ -1,0 +1,19 @@
+Collecting networkx
+  Using cached networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+Collecting numpy
+  Downloading numpy-2.3.3-cp311-cp311-win_amd64.whl.metadata (60 kB)
+Collecting pillow
+  Using cached pillow-11.3.0-cp311-cp311-win_amd64.whl.metadata (9.2 kB)
+Collecting scipy
+  Using cached scipy-1.16.2-cp311-cp311-win_amd64.whl.metadata (60 kB)
+Collecting tifffile
+  Downloading tifffile-2025.9.20-py3-none-any.whl.metadata (30 kB)
+Using cached networkx-3.5-py3-none-any.whl (2.0 MB)
+Downloading numpy-2.3.3-cp311-cp311-win_amd64.whl (13.1 MB)
+   ---------------------------------------- 13.1/13.1 MB 2.7 MB/s  0:00:05
+Using cached pillow-11.3.0-cp311-cp311-win_amd64.whl (7.0 MB)
+Using cached scipy-1.16.2-cp311-cp311-win_amd64.whl (38.7 MB)
+Downloading tifffile-2025.9.20-py3-none-any.whl (230 kB)
+Installing collected packages: pillow, numpy, networkx, tifffile, scipy
+
+Successfully installed networkx-3.5 numpy-2.3.3 pillow-11.3.0 scipy-1.16.2 tifffile-2025.9.20

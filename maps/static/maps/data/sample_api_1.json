@@ -1,0 +1,9 @@
+{
+  "results": [
+    { "ID": "410", "winner": "PPP/C", "votes_winner": 3200, "votes_runnerup": 2100, "margin": 1100, "margin_pct": 17.2 },
+    { "ID": "412", "winner": "APNU", "votes_winner": 1800, "votes_runnerup": 1700, "margin": 100,  "margin_pct": 1.4 },
+    { "ID": "413", "winner": "AFC", "votes_winner": 2500, "votes_runnerup": 1200, "margin": 1300, "margin_pct": 21.7 },
+    { "ID": "414", "winner": "PPP/C", "votes_winner": 900,  "votes_runnerup": 400,  "margin": 500,  "margin_pct": 20.0 },
+    { "ID": "415", "winner": "PPP/C", "votes_winner": 1200, "votes_runnerup": 1150, "margin": 50,   "margin_pct": 2.1 }
+  ]
+}

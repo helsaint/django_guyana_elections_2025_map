@@ -1,0 +1,74 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MapLibre + GeoJSON</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+  <style>
+    body, html { height:100%; margin:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+ 
+  <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+
+  <!-- then load our JS entry as an ES module -->
+  <script type="module" src="{% static 'maps/js/main.js' %}"></script>
+  
+  <script>
+    const geojsonUrl = "{% static 'maps/data/all_ndcs.geojson' %}";
+
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'https://demotiles.maplibre.org/style.json', // MapLibre demo style
+      center: [-0.1, 51.5], // change to your preferred center [lng, lat]
+      zoom: 6
+    });
+
+    map.on('load', () => {
+      // add GeoJSON source
+      map.addSource('myShapes', {
+        type: 'geojson',
+        data: geojsonUrl
+      });
+
+      // add a fill layer (for polygons). If your data has points/lines, adjust types.
+      map.addLayer({
+        id: 'myShapes-fill',
+        type: 'fill',
+        source: 'myShapes',
+        paint: {
+          'fill-color': '#0080ff',
+          'fill-opacity': 0.4
+        },
+        filter: ['==', '$type', 'Polygon']
+      });
+
+      // outline
+      map.addLayer({
+        id: 'myShapes-line',
+        type: 'line',
+        source: 'myShapes',
+        paint: { 'line-color': '#003f7f', 'line-width': 1.5 },
+        filter: ['==', '$type', 'Polygon']
+      });
+
+      // points (if present)
+      map.addLayer({
+        id: 'myShapes-points',
+        type: 'circle',
+        source: 'myShapes',
+        paint: { 'circle-radius': 4, 'circle-stroke-width': 1, 'circle-stroke-color': '#fff' },
+        filter: ['==', '$type', 'Point']
+      });
+    });
+  </script>
+-->
+</body>
+</html>
